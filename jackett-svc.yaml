@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jackett
+  labels:
+    run: jackett
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9117
+    protocol: TCP
+  selector:
+    run: jackett

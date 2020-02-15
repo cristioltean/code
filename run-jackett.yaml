@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jackett
+  labels: 
+    app: jackett
+spec:
+  selector:
+    matchLabels:
+      run: jackett
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: jackett
+    spec:
+      containers:
+      - name: jackett
+        image: coltean/project:test
+        ports:
+        - containerPort: 9117
+      imagePullSecrets:
+      - name: regcred    
