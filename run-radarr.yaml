@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radarr
+  labels: 
+    app: radarr
+spec:
+  selector:
+    matchLabels:
+      run: radarr
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: radarr
+    spec:
+      containers:
+      - name: radarr
+        image: coltean/radarr:radarr-colt
+        ports:
+        - containerPort: 7878
+      imagePullSecrets:
+      - name: regcred    
