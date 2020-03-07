@@ -16,8 +16,15 @@ spec:
     spec:
       containers:
       - name: jackett
-        image: coltean/project:test
+        image: coltean/jackett:jackett-colt
         ports:
         - containerPort: 9117
+        volumeMounts:
+        - name: jackett-data
+          mountPath: '/config'
       imagePullSecrets:
       - name: regcred    
+      volumes:
+      - name: jackett-data
+        persistentVolumeClaim:
+          claimName: jackett-claim
