@@ -5,9 +5,10 @@ metadata:
   labels:
     run: jackett
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
-  - port: 9117
-    protocol: TCP
+  - protocol: TCP
+    port: 9117
+    nodePort: 9117
   selector:
     run: jackett

@@ -11,4 +11,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/home/cristian/Jackett"
+    path: "/home/coltean/Jackett"
