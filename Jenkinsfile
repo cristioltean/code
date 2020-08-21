@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    environment {
         stage('DeployToProduction') {
             when {
                 branch 'master'
