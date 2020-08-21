@@ -1,6 +1,7 @@
 pipeline {
     agent any
-        stage('DeployToProduction') {
+    stages {
+          stage('DeployToProduction') {
             when {
                 branch 'master'
             }
@@ -13,5 +14,5 @@ pipeline {
                     enableConfigSubstitution: true
                 )
             }
-        }
     }
+}
