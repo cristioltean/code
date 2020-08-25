@@ -6,7 +6,7 @@ pipeline {
                 input 'Deploy to Production?'
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'deplpoy-jackett.yml',
+                    configs: 'deploy-jackett.yml',
                     enableConfigSubstitution: true
                 )
             }
