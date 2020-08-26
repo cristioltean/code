@@ -46,7 +46,7 @@ spec:
     spec:
       containers:
       - name: jackett
-        image: coltean/jackett:jackett-colt
+        image: linuxserver/jackett
         ports:
         - containerPort: 9117
         volumeMounts:
